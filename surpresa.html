@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Estilo para a sobreposição (lightbox) */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+            z-index: 999;
+        }
+
+        /* Estilo para a imagem dentro da sobreposição */
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            display: block;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Thumbnail da imagem -->
+<a href="#" id="thumbnailLink">
+    <img src="https://drive.google.com/file/d/1mlxtmrL6aAByUcx3AmzTLTK2OfLVcIzQ/view?usp=drive_link" alt="Clique para ver a surpresa">
+</a>
+
+<!-- Sobreposição da imagem -->
+<div id="imageLightbox" class="lightbox">
+    <img src="https://drive.google.com/file/d/1407jAoi5-xeDtbsHrfCqln2C43OCdqTz/view?usp=drive_link" alt="Imagem surpresa">
+</div>
+
+<script>
+    // Obter elementos HTML
+    const thumbnailLink = document.getElementById('thumbnailLink');
+    const imageLightbox = document.getElementById('imageLightbox');
+
+    // Adicionar um evento de clique ao link da miniatura
+    thumbnailLink.addEventListener('click', function() {
+        // Mostrar a sobreposição da imagem
+        imageLightbox.style.display = 'block';
+    });
+
+    // Adicionar um evento de clique à sobreposição da imagem para fechar
+    imageLightbox.addEventListener('click', function() {
+        // Ocultar a sobreposição da imagem quando clicada
+        imageLightbox.style.display = 'none';
+    });
+</script>
+
+</body>
+</html>
